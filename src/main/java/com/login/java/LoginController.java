@@ -23,19 +23,22 @@ public class LoginController
 	@PostMapping("/login")
 	public String loginHomepage(@RequestParam("username") String username, @RequestParam("password") String password, Model model)
 	{
-		
-		user u;
-		try {
+		user u,u1;
+		try 
+		{
 			u=userInterface.findByName(username);
+			u1 = (user) userInterface.findAll();			
 		}catch(Exception e)
 		{
 			System.out.println("Not FOund");
 			return "login";
 		}
 		
-		if(u!=null)
+		
+		if(u!=null && u.getPassword().toString() == password)
 		{
 			model.addAttribute("username",username);
+			System.out.println(u1);
 			return "home";
 		}
 		return "login";

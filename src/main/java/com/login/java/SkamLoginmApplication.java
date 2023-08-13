@@ -3,11 +3,14 @@ package com.login.java;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = {"com.login.model","com.login.java"})
+@SpringBootApplication
 public class SkamLoginmApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		SpringApplication.run(SkamLoginmApplication.class, args);
+
+
 	}
 
 }

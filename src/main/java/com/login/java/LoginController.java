@@ -19,6 +19,12 @@ public class LoginController
 	{
 		return "login";
 	}
+
+	@GetMapping("/home")
+	public String homePage()
+	{
+		return "home";
+	}
 	
 	@PostMapping("/login")
 	public String loginHomepage(@RequestParam("username") String username, @RequestParam("password") String password, Model model)
@@ -43,6 +49,10 @@ public class LoginController
 		}
 		return "login";
 	}
-	
+	@GetMapping("/register")
+	public String registerHomepage()
+	{
+		return "register";
+	}
 	
 }
